@@ -187,8 +187,8 @@ img {
 }
 
 .social-icon{
-  width: 25px;
-  height: 25px;
+  width: 30px;
+  height: 30px;
 }
 
 .social-icon img{
@@ -377,6 +377,11 @@ img {
     align-items: center;
     margin: auto;
     text-align: center;
+  }
+
+  .social-icon{
+    width: 19px;
+    height: 19px;
   }
 
 
