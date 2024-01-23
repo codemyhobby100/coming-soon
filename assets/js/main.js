@@ -56,37 +56,59 @@ sr.reveal(`.home__data`, {origin: 'top', delay: 400})
 sr.reveal(`.home__img`, {origin: 'bottom', delay: 600})
 sr.reveal(`.home__footer`, {origin: 'bottom', delay: 800})
 
+// coudown
+
 const seconds = document.querySelector(".seconds .number"),
   minutes = document.querySelector(".minutes .number"),
   hours = document.querySelector(".hours .number"),
   days = document.querySelector(".days .number");
 
-let secValue = 11,
-  minValue = 2,
-  hourValue = 2,
-  dayValue = 9;
+let initialTime = {
+  secValue: 0,
+  minValue: 0,
+  hourValue: 15,
+  dayValue: 6,
+};
+
+let currentTime = Object.assign({}, initialTime);
+
+// Check if there are stored values in localStorage
+if (localStorage.getItem("countdownValues")) {
+  currentTime = JSON.parse(localStorage.getItem("countdownValues"));
+} else {
+  // If no stored values, set the initial values
+  currentTime = Object.assign({}, initialTime);
+}
 
 const timeFunction = setInterval(() => {
-  secValue--;
+  if (currentTime.secValue > 0) {
+    currentTime.secValue--;
+  } else {
+    if (currentTime.minValue > 0) {
+      currentTime.minValue--;
+      currentTime.secValue = 59;
+    } else {
+      if (currentTime.hourValue > 0) {
+        currentTime.hourValue--;
+        currentTime.minValue = 59;
+      } else {
+        if (currentTime.dayValue > 0) {
+          currentTime.dayValue--;
+          currentTime.hourValue = 23;
+        } else {
+          clearInterval(timeFunction);
+        }
+      }
+    }
+  }
 
-  if (secValue === 0) {
-    minValue--;
-    secValue = 60;
-  }
-  if (minValue === 0) {
-    hourValue--;
-    minValue = 60;
-  }
-  if (hourValue === 0) {
-    dayValue--;
-    hourValue = 24;
-  }
+  // Update the displayed values
+  seconds.textContent = currentTime.secValue < 10 ? `0${currentTime.secValue}` : currentTime.secValue;
+  minutes.textContent = currentTime.minValue < 10 ? `0${currentTime.minValue}` : currentTime.minValue;
+  hours.textContent = currentTime.hourValue < 10 ? `0${currentTime.hourValue}` : currentTime.hourValue;
+  days.textContent = currentTime.dayValue < 10 ? `0${currentTime.dayValue}` : currentTime.dayValue;
 
-  if (dayValue === 0) {
-    clearInterval(timeFunction);
-  }
-  seconds.textContent = secValue < 10 ? `0${secValue}` : secValue;
-  minutes.textContent = minValue < 10 ? `0${minValue}` : minValue;
-  hours.textContent = hourValue < 10 ? `0${hourValue}` : hourValue;
-  days.textContent = dayValue < 10 ? `0${dayValue}` : dayValue;
-}, 1000); //1000ms = 1s
+  // Store the current values in localStorage
+  localStorage.setItem("countdownValues", JSON.stringify(currentTime));
+}, 1000); // 1000ms = 1s
+
