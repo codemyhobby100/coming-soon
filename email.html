@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .email-box {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+        }
+        .title, p {
+            text-align: left;
+        }
+        .box-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .account-name{
+            font-weight: 700;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        .account-info, .account-price {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-box">
+            <h2 class="title">Discover Latest Accounts</h2>
+            <p>Dive into our latest treasures! Sign into your account and discover what's new.</p>
+            <div class="email-box-content">
+                <div class="box-row">
+                    <div class="account-info">
+                        <div class="account-name">Facebook</div>
+                        <div class="account-description">3 years Facebook Account</div>
+                    </div>
+                    <div class="account-price">
+                        $20
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

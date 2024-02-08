@@ -220,6 +220,12 @@ img {
   font-size: 12px;
 }
 
+.launch-date h2{
+  font-size: 35px;
+  font-weight: 600;
+  padding-bottom: 20px;
+}
+
 
 .home__button:hover {
   box-shadow: 0 4px 12px hsla(38, 69%, 8%, .2);
@@ -279,6 +285,12 @@ img {
   }
 }
 
+@media screen and (max-width: 430px) {
+  .home__title{
+    font-size: 50px !important;
+  }
+}
+
 /* For medium devices */
 @media screen and (min-width: 767px) {
   .nav {
@@ -319,6 +331,8 @@ img {
     align-items: center;
     column-gap: 2rem;
   }
+
+
   .home__data {
     text-align: initial;
   }

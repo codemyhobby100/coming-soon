@@ -57,7 +57,6 @@ sr.reveal(`.home__img`, {origin: 'bottom', delay: 600})
 sr.reveal(`.home__footer`, {origin: 'bottom', delay: 800})
 
 // coudown
-
 const seconds = document.querySelector(".seconds .number"),
   minutes = document.querySelector(".minutes .number"),
   hours = document.querySelector(".hours .number"),
@@ -66,18 +65,32 @@ const seconds = document.querySelector(".seconds .number"),
 let initialTime = {
   secValue: 0,
   minValue: 0,
-  hourValue: 15,
-  dayValue: 6,
+  hourValue: 4,
+  dayValue: 8,
 };
 
 let currentTime = Object.assign({}, initialTime);
 
 // Check if there are stored values in localStorage
-if (localStorage.getItem("countdownValues")) {
-  currentTime = JSON.parse(localStorage.getItem("countdownValues"));
+const storedValues = localStorage.getItem("newCountdownValues");
+
+if (storedValues) {
+  const storedData = JSON.parse(storedValues);
+  if (
+    storedData.secValue >= 0 &&
+    storedData.minValue >= 0 &&
+    storedData.hourValue >= 0 &&
+    storedData.dayValue >= 0
+  ) {
+    currentTime = storedData;
+  } else {
+    currentTime = Object.assign({}, initialTime);
+    localStorage.setItem("newCountdownValues", JSON.stringify(currentTime));
+  }
 } else {
   // If no stored values, set the initial values
   currentTime = Object.assign({}, initialTime);
+  localStorage.setItem("newCountdownValues", JSON.stringify(currentTime));
 }
 
 const timeFunction = setInterval(() => {
@@ -109,6 +122,5 @@ const timeFunction = setInterval(() => {
   days.textContent = currentTime.dayValue < 10 ? `0${currentTime.dayValue}` : currentTime.dayValue;
 
   // Store the current values in localStorage
-  localStorage.setItem("countdownValues", JSON.stringify(currentTime));
+  localStorage.setItem("newCountdownValues", JSON.stringify(currentTime));
 }, 1000); // 1000ms = 1s
-
