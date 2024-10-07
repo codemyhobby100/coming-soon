@@ -26,12 +26,16 @@
         /* Adjust styles for mobile screens */
         @media (max-width: 768px) {
             .email-box {
-                max-width: 300px; 
+                max-width: 300px;
             }
         }
 
         .title, p {
             text-align: center;
+        }
+
+        .email-text{
+            font-size: 14px;
         }
 
         .box-row {
@@ -47,32 +51,28 @@
             padding-bottom: 10px;
         }
 
+        .banner img {
+            width: 100%;
+            height: auto;
+            max-height: 400px; /* Optional: restrict the height for large screens */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border-radius: 10px;
+        }
+
         .social-icons {
             text-align: center;
-            margin: 20px 0; 
-            color: white;
+            margin: 20px 0;
         }
 
         .social-icons span {
             margin: 0 10px; 
             display: inline-block;
             background-color: rgb(255, 85, 0);
-            width: 30px; 
-            height: 30px; 
-            border-radius: 50%; 
+            border-radius: 50%;
             padding: 10px;
-            text-align: center; 
-            line-height: 30px; 
         }
 
         .social-icons span a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px; 
-        }
-
-
-        .social-icons span a{
             color: #fff;
             text-decoration: none;
         }
@@ -89,7 +89,7 @@
             border: 1px solid rgb(255, 85, 0);
             text-decoration: none;
         }
-        
+
         .end {
             font-size: 14px;
             color: grey !important;
@@ -101,21 +101,20 @@
 <body>
     <div class="container">
         <div class="email-box">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;">
-                <tr>
-                    <td style="text-align: center;">
-                        <img src="assets/img/logo.png" width="50" height="50" alt="" style="vertical-align: middle; margin-right: -15px;">
-                        <h3 style="display: inline; margin: 0; padding-left: 10px;">Acctbazaar</h3>
-                    </td>
-                </tr>
-            </table>
-            <h2 class="title">Subject</h2>
-            <p>email description</p>
+            <div class="banner">
+                <img src="assets/img/acctbanner.png" alt="Banner">
+            </div>
+            <h2 class="title">Email Title</h2>
+            <p class="email-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, in provident ducimus 
+                magnam delectus nulla earum quos doloribus sint sequi vitae at fuga cumque deleniti laboriosam 
+                animi corporis quae! Perferendis.
+            </p>
             <div class="email-box-content">
                 <a href="#" class="btn">View</a>
                 <p class="end">
-                    This is an automatically generated email please do not reply to this email. 
-                    If you face any issues, please contact us at support@acctbazaar.com
+                    This is an automatically generated email. Please do not reply to this email. 
+                    If you face any issues, contact us at support@acctbazaar.com
                 </p>
                 <hr>
                 <div class="social-icons">
