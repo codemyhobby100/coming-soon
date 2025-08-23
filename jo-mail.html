@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JO App - Verify Your Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #000 !important;
+            font-family: Arial, sans-serif;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .email-box {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .email-box {
+                padding: 30px 20px;
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .logo-container img {
+                max-width: 160px !important; 
+            }
+            
+            .title {
+                font-size: 24px !important;
+            }
+            
+            .welcome-text {
+                font-size: 15px !important;
+            }
+            
+            .code-display {
+                font-size: 20px !important;
+                padding: 15px 25px !important;
+            }
+            
+            .social-icons span {
+                margin: 0 8px !important;
+                width: 28px !important;
+                height: 28px !important;
+                padding: 6px !important;
+                line-height: 28px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .email-box {
+                padding: 25px 15px;
+            }
+            
+            .logo-container img {
+                max-width: 140px !important; 
+            }
+            
+            .title {
+                font-size: 22px !important;
+            }
+            
+            .welcome-text {
+                font-size: 14px !important;
+            }
+            
+            .code-display {
+                font-size: 18px !important;
+                padding: 12px 20px !important;
+                letter-spacing: 1px !important;
+            }
+            
+            .instruction-text {
+                font-size: 12px !important;
+            }
+            
+            .end {
+                font-size: 12px !important;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .email-box {
+                padding: 20px 10px;
+            }
+            
+            .logo-container img {
+                max-width: 120px !important;
+            }
+            
+            .code-display {
+                font-size: 16px !important;
+                padding: 10px 15px !important;
+            }
+            
+            .social-icons span {
+                margin: 0 6px !important;
+                width: 26px !important;
+                height: 26px !important;
+                padding: 5px !important;
+                line-height: 26px !important;
+            }
+        }
+
+        .title, p {
+            text-align: center;
+        }
+
+        .social-icons {
+            text-align: center;
+            margin: 25px 0; 
+            color: white;
+        }
+
+        .social-icons span {
+            margin: 0 12px;
+            display: inline-block;
+            background-color: #9D21F6;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            padding: 6px;
+            text-align: center;
+            line-height: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons span:hover {
+            transform: scale(1.1);
+            background-color: #6FD596; 
+        }
+
+        .social-icons span a img {
+            width: 14px; 
+            height: 14px;
+        }
+
+        .social-icons span a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .code-display {
+            display: block;
+            width: fit-content;
+            padding: 18px 35px;
+            margin: 35px auto;
+            background-color: transparent; 
+            color: #9D21F6; 
+            border: 2px solid #9D21F6; 
+            border-radius: 12px;
+            outline: none;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 22px;
+            font-family: 'Courier New', monospace; 
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            user-select: all; 
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .end {
+            font-size: 14px;
+            color: grey !important;
+            padding-top: 25px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 10px 0;
+        }
+
+        .logo-container img {
+            max-width: 180px; 
+            height: auto;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .welcome-text {
+            color: #333;
+            line-height: 1.6;
+            margin: 25px 0;
+            font-size: 16px;
+        }
+
+        .title {
+            color: #9D21F6;
+            margin-bottom: 25px;
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .feature-list {
+            text-align: left; 
+            color: #666; 
+            margin: 0 auto; 
+            display: inline-block;
+        }
+
+        .feature-list li {
+            margin: 8px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #6FD596;
+            font-weight: bold;
+        }
+
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #9D21F6;
+            margin: 35px 0;
+            border-radius: 1px;
+        }
+
+        .contact-link {
+            color: #9D21F6 !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .contact-link:hover {
+            color: #6FD596 !important; 
+        }
+
+        .instruction-text {
+            color: #666;
+            font-size: 14px;
+            margin: 15px 0;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Email client compatibility */
+        table {
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            width: 100%;
+        }
+
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%;
+        }
+
+        /* Additional responsive utilities */
+        .text-center {
+            text-align: center !important;
+        }
+
+        /* Ensure proper spacing on all devices */
+        h3 {
+            margin: 20px 0 15px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        p {
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-box">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout: fixed;">
+                <tr>
+                    <td class="logo-container">
+                        <img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1755966703/ismxajzptaiagnsvssok.png" alt="JO App Logo">
+                    </td>
+                </tr>
+            </table>
+            
+            <h2 class="title">Verify Your Account</h2>
+            
+            <h3>Hi there,</h3>
+            
+            <p class="welcome-text">
+                Welcome to <strong>JO App</strong> - Nigeria's most comprehensive digital financial platform. 
+            </p>
+            
+            <p>Use the verification code below to complete your account setup:</p>
+            
+            <div class="email-box-content">
+                <div class="code-display">123456</div>
+                
+                <p class="instruction-text">
+                    Click the code above to copy it, then paste it in the verification field.
+                </p>
+                
+                <p class="end">
+                    This is an automatically generated email, please do not reply to this email. 
+                    If you face any issues, please contact us at <a href="mailto:info@joapp.com" class="contact-link">info@joapp.com</a>
+                </p>
+                
+                <hr>
+                
+                <div class="social-icons">
+
+                    <span><a href="https://www.instagram.com/official_joapp"><img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1722720542/zwecb4fjxxzxfudqmmmt.png" alt=""></a></span>
+                    <span><a href="https://twitter.com/AcctBazaar"><img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1722720231/pubaatf2xdnmyglvskuo.png" alt=""></a></span>
+                    <span><a href="https://www.tiktok.com/@official_joapp"><img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1730188449/f9nohvfpcwg9l5ekyrii.png" alt=""></a></span>
+                    <span><a href="https://t.me/acctbazaarchannel"><img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1722720920/yrrzkbbjjddmm34hotp4.png" alt=""></a></span>
+
+                </div>
+                
+                <p class="end">Copyright &copy; 2025 JO App. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
