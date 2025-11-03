@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>E-Ticket | Flight Booking</title>
-  <!-- Internal CSS: Responsive, print-friendly e-ticket design -->
+
   <style>
     :root{
       --brand-primary: #9D21F6;
@@ -38,7 +38,6 @@
       border: 1px solid var(--line);
     }
 
-    /* Header */
     .ticket__header{
       display: flex;
       align-items: center;
@@ -72,7 +71,6 @@
     }
     .etkt-label{ color:#666; }
 
-    /* Main flight segment */
     .segment{
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -124,7 +122,6 @@
       box-shadow: 0 0 0 3px rgba(111,213,150,.25);
     }
 
-    /* Grid details */
     .details{
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -144,7 +141,6 @@
     .detail__value{ font-weight: 700; font-size: 14px; }
     .detail__sub{ font-size: 12px; color:#555; }
 
-    /* Passenger + fare */
     .row{
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -334,7 +330,7 @@
   </div>
 
   <script>
-    // Demo: you can remove this mock and plug in your own orderData from your app
+    // This is a demo bro: you can remove this mock and plug in your own orderData from the app
     // The structure follows the fields you provided.
     const demoOrderData = {
       origin: 'LOS',
@@ -431,14 +427,8 @@
       $('serviceCharge').textContent = formatMoney(orderData.serviceCharge||0);
       $('finalAmount').textContent = formatMoney(orderData.finalAmount||0);
     }
-
-    // Replace demoOrderData with your app's real orderData
     populateTicket(demoOrderData);
 
-    // Integration notes:
-    // - Wire this up by calling populateTicket(orderData) with the live data.
-    // - Ensure departureDate and returnDate are Date objects (or ISO strings) for correct formatting.
-    // - Optional fields supported: bookingRef, pnr, flightNo.
   </script>
 </body>
 </html>
