@@ -58,7 +58,7 @@
       display: block;
     }
     .brand__name{
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .2px;
       color: var(--brand-primary);
     }
@@ -84,7 +84,7 @@
     }
     .place__city{
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
     }
     .place__airport{
       font-size: 12px;
@@ -93,7 +93,7 @@
     }
     .code{
       font-size: 40px;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 1px;
       color: var(--brand-primary);
     }
@@ -138,7 +138,7 @@
       min-height: 64px;
     }
     .detail__label{ font-size: 11px; color:#666; text-transform: uppercase; letter-spacing: .6px; }
-    .detail__value{ font-weight: 700; font-size: 14px; }
+    .detail__value{ font-weight: 600; font-size: 14px; }
     .detail__sub{ font-size: 12px; color:#555; }
 
     .row{
@@ -155,7 +155,7 @@
     }
     .card__title{
       padding: 12px 14px;
-      font-weight: 700;
+      font-weight: 600;
       border-bottom: 1px dashed var(--line);
       background: linear-gradient(180deg, rgba(157,33,246,.05), rgba(157,33,246,0));
     }
@@ -163,11 +163,11 @@
     .list__item{ display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
     .badge{
       display: inline-flex; align-items: center; gap: 6px;
-      padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
       background: var(--brand-primary); color:#fff;
     }
     .tag{ font-size: 12px; color:#444; }
-    .price{ font-weight: 800; font-size: 18px; }
+    .price{ font-weight: 700; font-size: 18px; }
     .subtotal{ font-size: 12px; color:#666; }
 
     /* Footer */
@@ -418,7 +418,7 @@
         const item = document.createElement('div');
         item.className = 'list__item';
         const name = `${p.lastName?.toUpperCase?.()||''} / ${p.firstName||''}`.trim();
-        item.innerHTML = `<div><strong>${name || 'Passenger ' + (idx+1)}</strong> <span class="tag">(${p.type||'ADT'})</span></div><div class="tag">Seat: Assigned at Check-in</div>`;
+        item.innerHTML = `<div><span style="font-weight:600">${name || 'Passenger ' + (idx+1)}</span> <span class="tag">(${p.type||'ADT'})</span></div><div class="tag">Seat: Assigned at Check-in</div>`;
         list.appendChild(item);
       });
 
