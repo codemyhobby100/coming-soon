@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goviraa - Verify Email</title>
+    <style>
+        /* Base Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #FFFFFF; /* White Background */
+            color: #05054A; /* Deep Blue Text */
+        }
+
+        /* Container */
+        .container {
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* Email Card */
+        .email-card {
+            background-color: #FEFEFE;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(5, 5, 74, 0.08);
+            overflow: hidden;
+            border: 1px solid #F0F0F5;
+        }
+
+        /* Header Section */
+        .card-header {
+            background-color: #FFFFFF;
+            padding: 50px 40px;
+            text-align: center;
+            border-radius: 16px 16px 0 0;
+            border-bottom: 3px solid #5AF175;
+        }
+
+        .logo-img {
+            width: 140px;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        /* Body Section */
+        .card-body {
+            padding: 50px 40px;
+            text-align: center;
+        }
+
+        .title {
+            color: #05054A;
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+            letter-spacing: -0.3px;
+        }
+
+        .description {
+            color: #666680;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0 0 50px 0;
+            font-weight: 400;
+        }
+
+        /* Verification Code Box */
+        .code-box {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 0 auto 50px auto;
+        }
+
+        .code-char {
+            background-color: #F8F8FC;
+            border: 2px solid #E8E8F0;
+            border-radius: 10px;
+            width: 48px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 700;
+            color: #05054A;
+            font-family: 'Courier New', Courier, monospace;
+            transition: all 0.2s ease;
+        }
+
+        .code-char:hover {
+            background-color: #F0F0F8;
+            border-color: #5AF175;
+        }
+
+        /* Action Button */
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #5AF175 0%, #3dd65f 100%);
+            color: #FFFFFF;
+            text-decoration: none;
+            padding: 16px 52px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(90, 241, 117, 0.25);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, #3dd65f 0%, #2dbe4f 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 28px rgba(90, 241, 117, 0.35);
+        }
+
+        /* Footer Section */
+        .card-footer {
+            padding: 35px 40px;
+            text-align: center;
+            border-top: 1px solid #F0F0F5;
+            background-color: #FAFAFE;
+        }
+
+        .footer-text {
+            color: #8888A0;
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+            font-weight: 400;
+        }
+
+        .footer-link {
+            color: #5AF175;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #3dd65f;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 10px;
+            }
+            .email-card {
+                border-radius: 12px;
+            }
+            .card-header {
+                padding: 40px 20px;
+            }
+            .card-body, .card-footer {
+                padding: 35px 20px;
+            }
+            .logo-img {
+                width: 100px;
+            }
+            .title {
+                font-size: 22px;
+            }
+            .description {
+                font-size: 14px;
+            }
+            .code-char {
+                width: 42px;
+                height: 50px;
+                font-size: 22px;
+            }
+            .code-box {
+                gap: 8px;
+                margin-bottom: 40px;
+            }
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="email-card">
+            <div class="card-header">
+                <img src="https://res.cloudinary.com/dfyeocma8/image/upload/v1772547668/vxeqzrfym6uo7su9kf4x.png" alt="Goviraa Logo" class="logo-img">
+            </div>
+            <div class="card-body">
+                <h2 class="title">Verify Your Email</h2>
+                <p class="description">
+                    Welcome to Goviraa! We're thrilled to have you on board. <br>
+                    Use the code below to activate your account.
+                </p>
+                
+                <div class="code-box">
+                    <span class="code-char">1</span>
+                    <span class="code-char">2</span>
+                    <span class="code-char">3</span>
+                    <span class="code-char">4</span>
+                    <span class="code-char">5</span>
+                    <span class="code-char">6</span>
+                </div>
+
+                <a href="#" class="btn">Verify Account</a>
+            </div>
+            <div class="card-footer">
+                <p class="footer-text">
+                    This is an automated message, please do not reply.<br>
+                    Need help? <a href="mailto:support@goviraa.com" class="footer-link">Contact Support</a>
+                </p>
+                <p class="footer-text" style="margin-top: 10px;">
+                    &copy; 2026 Goviraa. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
