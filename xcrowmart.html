@@ -7,24 +7,33 @@
     <title>XCrowmart – Verify Your Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <style>
         /* ── CSS Variables ── */
         :root {
-            --xcrow-bg:         #00091a;
-            --xcrow-elevated:   #00112a;
-            --xcrow-card:       #000d24;
-            --xcrow-footer:     #000d1f;
-            --xcrow-blue:       #2dc7ff;
-            --xcrow-blue-dark:  #00a1ff;
+            --xcrow-bg: #00091a;
+            --xcrow-elevated: #00112a;
+            --xcrow-card: #000d24;
+            --xcrow-footer: #000d1f;
+            --xcrow-blue: #2dc7ff;
+            --xcrow-blue-dark: #00a1ff;
             --xcrow-blue-light: #60d8ff;
         }
 
         /* ── Base Reset ── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        body, html {
+        body,
+        html {
             width: 100%;
             min-height: 100%;
             font-family: 'Montserrat', sans-serif;
@@ -58,6 +67,7 @@
             pointer-events: none;
             z-index: 0;
         }
+
         .orb-secondary {
             position: fixed;
             bottom: 15%;
@@ -77,7 +87,7 @@
             inset: 0;
             pointer-events: none;
             z-index: 0;
-            background-image: radial-gradient(circle, rgba(45,199,255,0.12) 1px, transparent 1px);
+            background-image: radial-gradient(circle, rgba(45, 199, 255, 0.12) 1px, transparent 1px);
             background-size: 28px 28px;
             opacity: 0.03;
         }
@@ -102,16 +112,25 @@
         }
 
         @keyframes cardIn {
-            from { opacity: 0; transform: translateY(28px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Top highlight line */
         .card-top-line {
             position: absolute;
-            top: 0; left: 40px; right: 40px;
+            top: 0;
+            left: 40px;
+            right: 40px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(45,199,255,0.35), transparent);
+            background: linear-gradient(90deg, transparent, rgba(45, 199, 255, 0.35), transparent);
         }
 
         /* ── Header ── */
@@ -139,7 +158,7 @@
         .header-divider {
             width: 100%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(45,199,255,0.12), transparent);
+            background: linear-gradient(90deg, transparent, rgba(45, 199, 255, 0.12), transparent);
             margin: 0;
         }
 
@@ -154,7 +173,7 @@
             width: 64px;
             height: 64px;
             border-radius: 20px;
-            background: linear-gradient(135deg, rgba(45,199,255,0.15), transparent);
+            background: linear-gradient(135deg, rgba(45, 199, 255, 0.15), transparent);
             border: 1px solid rgba(45, 199, 255, 0.15);
             display: flex;
             align-items: center;
@@ -227,17 +246,19 @@
             position: relative;
             overflow: hidden;
             box-shadow:
-                0 0 0 1px rgba(45,199,255,0.06) inset,
-                0 0 40px rgba(45,199,255,0.08);
+                0 0 0 1px rgba(45, 199, 255, 0.06) inset,
+                0 0 40px rgba(45, 199, 255, 0.08);
         }
 
         /* Inner top shimmer on code box */
         .code-box::before {
             content: '';
             position: absolute;
-            top: 0; left: 20%; right: 20%;
+            top: 0;
+            left: 20%;
+            right: 20%;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(45,199,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(45, 199, 255, 0.4), transparent);
         }
 
         .code-digits {
@@ -256,7 +277,7 @@
         .code-glow {
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at 50% 50%, rgba(45,199,255,0.08), transparent 70%);
+            background: radial-gradient(ellipse at 50% 50%, rgba(45, 199, 255, 0.08), transparent 70%);
             pointer-events: none;
         }
 
@@ -296,7 +317,7 @@
             transition: all 0.2s ease;
             box-shadow:
                 0 0 20px rgba(45, 199, 255, 0.25),
-                0 4px 16px rgba(0,0,0,0.3);
+                0 4px 16px rgba(0, 0, 0, 0.3);
             position: relative;
             overflow: hidden;
         }
@@ -305,14 +326,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 60%);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent 60%);
             pointer-events: none;
         }
 
         .btn:hover {
             box-shadow:
                 0 0 40px rgba(45, 199, 255, 0.45),
-                0 8px 24px rgba(0,0,0,0.4);
+                0 8px 24px rgba(0, 0, 0, 0.4);
             transform: scale(1.02);
         }
 
@@ -388,7 +409,7 @@
             width: 3px;
             height: 3px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .footer-divider {
@@ -412,34 +433,84 @@
 
         /* ── Shared fade-up animation ── */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ── Responsive ── */
         @media (max-width: 540px) {
-            body { overflow-x: hidden; }
+            body {
+                overflow-x: hidden;
+            }
 
-            .orb-primary  { width: 260px; height: 260px; opacity: 0.5; }
-            .orb-secondary { width: 200px; height: 200px; opacity: 0.5; }
+            .orb-primary {
+                width: 260px;
+                height: 260px;
+                opacity: 0.5;
+            }
 
-            .card-header  { padding: 36px 24px 20px; }
-            .card-body    { padding: 28px 24px 32px; }
-            .card-footer  { padding: 20px 24px 28px; }
+            .orb-secondary {
+                width: 200px;
+                height: 200px;
+                opacity: 0.5;
+            }
 
-            .card-title   { font-size: 22px; }
-            .code-digits  { font-size: 34px; letter-spacing: 10px; }
-            .code-box     { padding: 16px 24px; }
+            .card-header {
+                padding: 36px 24px 20px;
+            }
 
-            .logo-image   { max-width: 160px; }
-            .icon-shield  { width: 52px; height: 52px; border-radius: 16px; }
+            .card-body {
+                padding: 28px 24px 32px;
+            }
 
-            .btn          { padding: 14px 24px; width: 100%; }
+            .card-footer {
+                padding: 20px 24px 28px;
+            }
+
+            .card-title {
+                font-size: 22px;
+            }
+
+            .code-digits {
+                font-size: 34px;
+                letter-spacing: 10px;
+            }
+
+            .code-box {
+                padding: 16px 24px;
+            }
+
+            .logo-image {
+                max-width: 160px;
+            }
+
+            .icon-shield {
+                width: 52px;
+                height: 52px;
+                border-radius: 16px;
+            }
+
+            .btn {
+                padding: 14px 24px;
+                width: 100%;
+            }
         }
 
         @media (hover: hover) {
-            .btn:hover    { transform: scale(1.02); }
-            .footer-link:hover { color: var(--xcrow-blue); }
+            .btn:hover {
+                transform: scale(1.02);
+            }
+
+            .footer-link:hover {
+                color: var(--xcrow-blue);
+            }
         }
     </style>
 </head>
@@ -460,11 +531,8 @@
             <!-- Header -->
             <header class="card-header">
                 <div class="logo-wrap">
-                    <img
-                        src="https://res.cloudinary.com/dyfpkmimi/image/upload/v1778316839/logo_oqkdon.png"
-                        alt="XCrowmart logo"
-                        class="logo-image"
-                    >
+                    <img src="https://res.cloudinary.com/dyfpkmimi/image/upload/v1778316839/logo_oqkdon.png"
+                        alt="XCrowmart logo" class="logo-image">
                 </div>
             </header>
 
@@ -475,9 +543,10 @@
 
                 <!-- Shield Icon -->
                 <div class="icon-shield" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="M9 12l2 2 4-4" />
                     </svg>
                 </div>
 
@@ -487,7 +556,7 @@
                 </h1>
 
                 <p class="card-description">
-                    Welcome to XCrowmart — The Web3 Marketplace. Powered by Escrow.<br>
+                    Welcome to XCrowmart. The Web3 Marketplace. Powered by an Escrow Trade System.<br>
                     Use the one-time code below to verify your identity and activate your account.
                 </p>
 
@@ -505,17 +574,19 @@
                 <div class="btn-wrap">
                     <a href="#" class="btn" id="verify-account-btn" role="button" aria-label="Verify your account">
                         Verify Account
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                     </a>
                 </div>
 
                 <!-- Security hint -->
                 <div class="security-note" role="note">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                     </svg>
                     <span class="security-note-text">This code is encrypted and valid for one use only.</span>
                 </div>
@@ -542,4 +613,5 @@
     </div>
 
 </body>
+
 </html>
